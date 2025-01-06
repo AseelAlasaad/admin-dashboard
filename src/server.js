@@ -10,7 +10,7 @@ app.use(express.json())
 const handel404 = require ('./auth/handlers/404')
 const handel500= require('./auth/handlers/500')
 
-app.get('/', (req, res)=>{
+app.get('/home', (req, res)=>{
     res.send("Home page")
     
 })
@@ -19,7 +19,7 @@ app.use(handel404)
 app.use(handel500)
 
 module.exports={
-    server:app,
+    app,
     start: (port)=>{
         app.listen(port,()=>{
         console.log(`Server up on ${port}`)
